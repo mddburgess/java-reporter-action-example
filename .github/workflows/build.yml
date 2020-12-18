@@ -24,3 +24,8 @@ jobs:
       - run: mvn clean verify -B
       - uses: mddburgess/java-reporter-action@main
         if: ${{ always() }}
+        with:
+          pmd: disabled
+          cpd: expected
+          spotbugs: required
+          checkstyle: autodetect
