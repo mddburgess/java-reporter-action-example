@@ -26,6 +26,5 @@ jobs:
         if: ${{ always() }}
         with:
           pmd: disabled
-          cpd: expected
+          cpd: autodetect
           spotbugs: required
-          checkstyle: autodetect
