@@ -10,58 +10,19 @@ public class ErrorProne {
 
     static {}
 
-    public void avoidBranchingStatementAsLastInLoop() {
-        for (int i = 0; i < 10; i++) {
-            if (i * i <= 25) {
-                continue;
-            }
-            break;
-        }
+    public boolean misplacedNullCheck(String string) {
+        return string.equals("string") && string != null;
     }
 
-    public BigDecimal avoidDecimalLiteralsInBigDecimalConstructor() {
-        return new BigDecimal(1.123);
+    public boolean equals(Object other) {
+        return this == other;
     }
 
-    public boolean avoidMultipleUnaryOperators() {
-        return !!true;
-    }
-
-    public int avoidUsingOctalValues() {
-        return 010;
-    }
-
-    public String brokenNullCheck(String string) {
-        if (string != null || !string.equals("")) {
-            return string;
-        }
-        return null;
-    }
-
-    public void checkSkipResult() throws IOException {
-        FileInputStream fis = new FileInputStream("file");
-        fis.skip(1);
-    }
-
-    public void classCastExceptionWithToArray() {
-        Collection collection = new ArrayList();
-        collection.add(1);
-        Integer[] array = (Integer[]) collection.toArray();
-    }
-
-    public void dontUseFloatTypeForLoopIndices() {
-        for (float i = 0; i < 10; i++) {
-
-        }
-    }
-
-    public void emptyTryCatchFinallyBlocks() {
+    public boolean returnFromFinallyBlock() {
         try {
-
-        } catch (Exception exception) {
-
+            return true;
         } finally {
-
+            return false;
         }
     }
 
@@ -83,6 +44,22 @@ public class ErrorProne {
     public void uselessOperationOnImmutable() {
         BigDecimal bd = new BigDecimal(5);
         bd.add(new BigDecimal(6));
+    }
+
+    public void dontUseFloatTypeForLoopIndices() {
+        for (float i = 0; i < 10; i++) {
+
+        }
+    }
+
+    public void emptyTryCatchFinallyBlocks() {
+        try {
+
+        } catch (Exception exception) {
+
+        } finally {
+
+        }
     }
 
     public void emptyIfBlock(boolean condition) {
@@ -126,19 +103,42 @@ public class ErrorProne {
         }
     }
 
-    public boolean misplacedNullCheck(String string) {
-        return string.equals("string") && string != null;
-    }
-
-    public boolean equals(Object other) {
-        return this == other;
-    }
-
-    public boolean returnFromFinallyBlock() {
-        try {
-            return true;
-        } finally {
-            return false;
+    public void avoidBranchingStatementAsLastInLoop() {
+        for (int i = 0; i < 10; i++) {
+            if (i * i <= 25) {
+                continue;
+            }
+            break;
         }
+    }
+
+    public BigDecimal avoidDecimalLiteralsInBigDecimalConstructor() {
+        return new BigDecimal(1.123);
+    }
+
+    public boolean avoidMultipleUnaryOperators() {
+        return !!true;
+    }
+
+    public int avoidUsingOctalValues() {
+        return 010;
+    }
+
+    public String brokenNullCheck(String string) {
+        if (string != null || !string.equals("")) {
+            return string;
+        }
+        return null;
+    }
+
+    public void checkSkipResult() throws IOException {
+        FileInputStream fis = new FileInputStream("file");
+        fis.skip(1);
+    }
+
+    public void classCastExceptionWithToArray() {
+        Collection collection = new ArrayList();
+        collection.add(1);
+        Integer[] array = (Integer[]) collection.toArray();
     }
 }
