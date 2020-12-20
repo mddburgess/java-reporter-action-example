@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -7,7 +8,9 @@ import org.slf4j.LoggerFactory;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assumptions.assumeThat;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 public class SimpleTest {
 
@@ -49,5 +52,15 @@ public class SimpleTest {
     @Test
     void skippedTest() {
         assumeThat(1).isNull();
+    }
+
+    @Test
+    void junitAssumptionWithoutMessage() {
+        assumeTrue(2 + 2 == 5);
+    }
+
+    @Test
+    void junitAssumptionWithMessage() {
+        assumeTrue(2 + 2 == 5, "test assumption message");
     }
 }

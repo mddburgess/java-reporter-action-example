@@ -1,5 +1,6 @@
 package com.example.demo.math;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,5 +17,11 @@ public class ImpossibleServiceTest {
     void divideByZero() {
         var result = impossibleService.divideByZero(1);
         assertThat(result).isEqualTo(1);
+    }
+
+    @Test
+    @Disabled("new disabled test")
+    void alsoDisabled() {
+
     }
 }
