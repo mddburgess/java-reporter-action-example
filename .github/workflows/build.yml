@@ -24,3 +24,14 @@ jobs:
       - run: mvn clean verify -B
       - uses: mddburgess/java-reporter-action@rewrite
         if: ${{ always() }}
+        with:
+          surefire: required
+          surefire-report-paths: "**/failsafe-reports/TEST-*.xml"
+          pmd: expected
+          pmd-report-paths: "**/pmd.json"
+          cpd: required
+          cpd-report-paths: "**/cpd.json"
+          spotbugs: expected
+          spotbugs-report-paths: "**/spotbugs.xml"
+          checkstyle: required
+          checkstyle-report-paths: "**/checkstyle-report.xml"
