@@ -26,7 +26,6 @@ jobs:
         if: ${{ always() }}
         with:
           surefire: required
-          surefire-report-paths: "**/failsafe-reports/TEST-*.xml"
           pmd: expected
           pmd-report-paths: "**/pmd.json"
           cpd: required
