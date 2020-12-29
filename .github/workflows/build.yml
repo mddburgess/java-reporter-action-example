@@ -28,7 +28,6 @@ jobs:
           surefire: required
           pmd: required
           cpd: required
-          cpd-report-paths: "**/cpd.json"
           spotbugs: expected
           spotbugs-report-paths: "**/spotbugs.xml"
           checkstyle: required
