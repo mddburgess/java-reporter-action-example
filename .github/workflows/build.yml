@@ -26,8 +26,7 @@ jobs:
         if: ${{ always() }}
         with:
           surefire: required
-          pmd: expected
-          pmd-report-paths: "**/pmd.json"
+          pmd: required
           cpd: required
           cpd-report-paths: "**/cpd.json"
           spotbugs: expected
