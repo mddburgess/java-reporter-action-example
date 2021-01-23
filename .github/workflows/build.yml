@@ -30,4 +30,3 @@ jobs:
           cpd: required
           spotbugs: required
           checkstyle: required
-          checkstyle-report-paths: "**/checkstyle-report.xml"
