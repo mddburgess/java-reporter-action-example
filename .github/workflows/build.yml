@@ -22,7 +22,7 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-maven
       - run: mvn clean verify -B
-      - uses: mddburgess/java-reporter-action@rewrite
+      - uses: mddburgess/java-reporter-action@main
         if: ${{ always() }}
         with:
           surefire: required
