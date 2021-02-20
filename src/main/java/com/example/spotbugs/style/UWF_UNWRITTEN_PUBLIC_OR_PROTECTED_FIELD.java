@@ -7,4 +7,8 @@ public class UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD {
     public void bug() {
         System.out.println(field);
     }
+
+    public void NP_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD() {
+        System.out.println(field.length());
+    }
 }
