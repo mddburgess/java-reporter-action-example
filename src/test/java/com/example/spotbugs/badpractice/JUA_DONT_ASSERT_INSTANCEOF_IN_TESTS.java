@@ -3,7 +3,7 @@ package com.example.spotbugs.badpractice;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 
-public class DontAssertInstanceofInTests {
+public class JUA_DONT_ASSERT_INSTANCEOF_IN_TESTS {
 
     private Object object = "String";
 

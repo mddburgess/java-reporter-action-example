@@ -1,6 +1,6 @@
-package com.example.spotbugs.badpractice;
+package com.example.spotbugs.badpractice.finalizer;
 
-public class FinalizerNullsFields {
+public class FI_FINALIZER_NULLS_FIELDS {
 
     private String answer = "42";
 

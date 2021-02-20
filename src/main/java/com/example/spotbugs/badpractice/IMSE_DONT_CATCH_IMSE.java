@@ -1,6 +1,6 @@
 package com.example.spotbugs.badpractice;
 
-public class DontCatchImse {
+public class IMSE_DONT_CATCH_IMSE {
 
     public void bug() {
         try {
