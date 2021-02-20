@@ -73,6 +73,11 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <effort>Max</effort>
+                    <threshold>Low</threshold>
+                    <includeTests>true</includeTests>
+                </configuration>
             </plugin>
 
             <plugin>
