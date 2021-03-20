@@ -22,10 +22,7 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-maven
       - run: mvn clean verify -B
-      - uses: mddburgess/java-reporter-action@fix
+      - uses: jwgmeligmeyling/checkstyle-github-action@master
         if: ${{ always() }}
         with:
-          surefire: required
-          pmd: required
-          cpd: required
-          spotbugs: required
+          path: '**/checkstyle-result.xml'
