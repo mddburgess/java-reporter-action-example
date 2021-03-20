@@ -29,4 +29,3 @@ jobs:
           pmd: required
           cpd: required
           spotbugs: required
-          checkstyle: required
