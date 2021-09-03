@@ -1,5 +1,9 @@
+package com.example.jra.surefire;
+
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -24,5 +28,11 @@ class JUnit5Test {
     @Disabled
     void skippedTest() {
         assertEquals(4, 2 + 2);
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {1, 2, 3})
+    void parameterizedTest(int number) {
+        assertEquals(0, number % 2);
     }
 }
