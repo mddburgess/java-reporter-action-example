@@ -1,17 +1,24 @@
 package com.example.jra.surefire.junit5;
 
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class BeforeEachExceptionTest {
+class AfterAllExceptionTest {
 
-    private Integer i;
+    private static Integer i;
 
-    @BeforeEach
-    void beforeEach() {
-        i = 42 / 0;
+    @BeforeAll
+    static void beforeAll() {
+        i = 42;
+    }
+
+    @AfterAll
+    static void afterAll() {
+        i = i / 0;
     }
 
     @Test
