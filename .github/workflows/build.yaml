@@ -20,5 +20,5 @@ jobs:
           distribution: zulu
           cache: maven
       - run: mvn clean verify -B
-      - uses: mddburgess/java-reporter-action@main
+      - uses: mddburgess/java-reporter-action@surefire
         if: ${{ always() }}
